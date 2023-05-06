@@ -6,7 +6,7 @@ using UnityEngine;
 public class CoinsManager : MonoBehaviour
 {
     public int coinCount;
-    public TextMeshProUGUI tmp;
+    public TextMeshProUGUI tmpShop, tmpUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,7 @@ public class CoinsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmp.text = coinCount.ToString();
+        tmpUI.text = coinCount.ToString();
+        tmpShop.text = coinCount.ToString();
     }
 }
