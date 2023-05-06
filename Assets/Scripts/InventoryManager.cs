@@ -43,12 +43,13 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void AddNewItem(int sellCost, Sprite chosenSprite)
+    public void AddNewItem(int sellCost, Sprite chosenSprite, string itemTag)
     {
         ItemAttributes tempItem = defaultItem;
         tempItem = Instantiate(defaultItem, panel);
         tempItem.sellCost = sellCost;
         tempItem.chosenSprite = chosenSprite;
+        tempItem.itemTag = itemTag;
         tempItem.SetAttributes();
         Items.Add(tempItem);
 

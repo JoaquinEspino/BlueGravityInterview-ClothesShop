@@ -12,6 +12,7 @@ public class ItemAttributes : MonoBehaviour
 
     public Sprite chosenSprite;
     public Image image;
+    public string itemTag;
     void Start()
     {
         coinsManager = GameObject.FindWithTag("CoinManager");

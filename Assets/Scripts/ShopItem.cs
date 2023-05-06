@@ -16,6 +16,7 @@ public class ShopItem : MonoBehaviour
     public GameObject coinsManager;
 
     public InventoryManager inventoryManager;
+    public string productTag;
     void Start()
     {
         coinsManager = GameObject.FindWithTag("CoinManager");
@@ -40,7 +41,7 @@ public class ShopItem : MonoBehaviour
         if (coinsManager.GetComponent<CoinsManager>().coinCount - itemPrice >= 0)
         {
             coinsManager.GetComponent<CoinsManager>().coinCount -= itemPrice;
-            inventoryManager.AddNewItem(itemPrice / 2, chosenSprite);
+            inventoryManager.AddNewItem(itemPrice / 2, chosenSprite, productTag);
             Destroy(gameObject);
         }
     }

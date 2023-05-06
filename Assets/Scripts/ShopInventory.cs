@@ -42,6 +42,11 @@ public class ShopInventory : MonoBehaviour
         item3.itemPrice = 4;
         item4.itemPrice = 2;
 
+        item1.productTag = "hats";
+        item2.productTag = "shirts";
+        item3.productTag = "pants";
+        item4.productTag = "scarfs";
+
         item1.SetAttributes();
         item2.SetAttributes();
         item3.SetAttributes();
