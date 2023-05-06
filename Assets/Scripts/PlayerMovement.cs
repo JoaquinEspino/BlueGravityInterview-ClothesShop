@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     
     public Animator animator;
 
+    public ShopDialogueManager shopDialogueManager;
+
 
     Vector2 movement;
 
@@ -32,6 +34,17 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        //Disables movement and animations while in dialogue scenarios
+        if(shopDialogueManager.GetComponent<ShopDialogueManager>().inDialogueEvent)
+        {
+            movement = Vector2.zero;
+            animator.SetFloat("Horizontal", 0.0f);
+            //use Up_Idle when in dialogue with shopkeeper
+            animator.SetFloat("Vertical", 1.0f);
+            animator.SetFloat("Speed", 0.0f);
+        }
+
     }
 
     void FixedUpdate()
