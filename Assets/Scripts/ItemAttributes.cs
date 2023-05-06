@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ItemAttributes : MonoBehaviour
@@ -8,9 +9,11 @@ public class ItemAttributes : MonoBehaviour
     public GameObject coinsManager;
     public GameObject inventoryManager;
     public int sellCost;
+
+    public Sprite chosenSprite;
+    public Image image;
     void Start()
     {
-        sellCost = 3;
         coinsManager = GameObject.FindWithTag("CoinManager");
         inventoryManager = GameObject.FindWithTag("InventoryManager");
     }
@@ -25,7 +28,10 @@ public class ItemAttributes : MonoBehaviour
     {
         coinsManager.GetComponent<CoinsManager>().coinCount += sellCost;
        
-        inventoryManager.GetComponent<InventoryManager>().RefreshItems();
-        inventoryManager.GetComponent<InventoryManager>().RemoveItem(thisItem);
+        Destroy(gameObject);
+    }
+    public void SetAttributes()
+    {
+        image.sprite = chosenSprite;
     }
 }

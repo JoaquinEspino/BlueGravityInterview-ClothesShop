@@ -138,7 +138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisItem: {fileID: 1779663548674668517}
   coinsManager: {fileID: 0}
+  inventoryManager: {fileID: 0}
   sellCost: 0
+  chosenSprite: {fileID: 0}
+  image: {fileID: 1779663549868048683}
 --- !u!1 &1779663549868048677
 GameObject:
   m_ObjectHideFlags: 0

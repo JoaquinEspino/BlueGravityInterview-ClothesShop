@@ -40,7 +40,7 @@ public class ShopInventory : MonoBehaviour
         item1.itemPrice = 2;
         item2.itemPrice = 4;
         item3.itemPrice = 4;
-        item4.itemPrice = 1;
+        item4.itemPrice = 2;
 
         item1.SetAttributes();
         item2.SetAttributes();

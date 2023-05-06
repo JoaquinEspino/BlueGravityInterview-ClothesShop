@@ -14,9 +14,12 @@ public class ShopItem : MonoBehaviour
     public Image image;
 
     public GameObject coinsManager;
+
+    public InventoryManager inventoryManager;
     void Start()
     {
-        
+        coinsManager = GameObject.FindWithTag("CoinManager");
+        inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -34,7 +37,12 @@ public class ShopItem : MonoBehaviour
 
     public void BuyItem()
     {
-
+        if (coinsManager.GetComponent<CoinsManager>().coinCount - itemPrice >= 0)
+        {
+            coinsManager.GetComponent<CoinsManager>().coinCount -= itemPrice;
+            inventoryManager.AddNewItem(itemPrice / 2, chosenSprite);
+            Destroy(gameObject);
+        }
     }
 
 

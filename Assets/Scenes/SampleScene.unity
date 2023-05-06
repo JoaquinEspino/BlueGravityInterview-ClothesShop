@@ -938,9 +938,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1472728560}
-  ItemPrefab: {fileID: 1779663548674668517, guid: 078c6e017d56bf747ace46f6be783f34, type: 3}
-  Items:
+  inventory:
   - {fileID: 1779663548674668517, guid: 078c6e017d56bf747ace46f6be783f34, type: 3}
+  ItemPrefab: {fileID: 1779663548674668517, guid: 078c6e017d56bf747ace46f6be783f34, type: 3}
+  Items: []
+  defaultItem: {fileID: -5883756874707797265, guid: 078c6e017d56bf747ace46f6be783f34, type: 3}
+  defaultItemSprite: {fileID: -267758133915289989, guid: 84356da12a8249c499e709f4475f15d8, type: 3}
 --- !u!1 &581527314
 GameObject:
   m_ObjectHideFlags: 0

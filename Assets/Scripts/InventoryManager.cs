@@ -6,11 +6,14 @@ public class InventoryManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform panel;
+    public GameObject[] inventory;
     public GameObject ItemPrefab;
-    public List<GameObject> Items = new List<GameObject>();
+    public List<ItemAttributes> Items = new List<ItemAttributes>();
+    public ItemAttributes defaultItem;
+    public Sprite defaultItemSprite;
     void Start()
     {
-        RefreshItems();
+        LoadDefaultItems();
     }
 
     // Update is called once per frame
@@ -19,21 +22,35 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    public void RemoveItem(GameObject item)
+
+    public void ItemBought()
     {
-        Items.Remove(item);
+        
     }
 
-    public void RefreshItems()
+    void LoadDefaultItems()
     {
-        foreach (Transform item in panel)
-        {
-            Destroy(item.gameObject);
-        }
+        ItemAttributes tempItem = defaultItem;
+        tempItem = Instantiate(defaultItem, panel);
 
-       foreach(var item in Items)
-        {
-            GameObject obj = Instantiate(ItemPrefab, panel);
-        }
+        tempItem.sellCost = 2;
+        tempItem.chosenSprite = defaultItemSprite;
+
+        tempItem.SetAttributes();
+
+        Items.Add(tempItem);
+
+
+    }
+
+    public void AddNewItem(int sellCost, Sprite chosenSprite)
+    {
+        ItemAttributes tempItem = defaultItem;
+        tempItem = Instantiate(defaultItem, panel);
+        tempItem.sellCost = sellCost;
+        tempItem.chosenSprite = chosenSprite;
+        tempItem.SetAttributes();
+        Items.Add(tempItem);
+
     }
 }
