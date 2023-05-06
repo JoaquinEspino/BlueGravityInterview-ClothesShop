@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CoinManager
+  - InventoryManager
+  - Hats
+  - Shirts
+  - Pants
+  - Scarfs
   layers:
   - Default
   - TransparentFX

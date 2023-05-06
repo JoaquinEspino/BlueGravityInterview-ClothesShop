@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1779663548674668521}
   - component: {fileID: 1779663548674668522}
   - component: {fileID: 1779663548674668523}
+  - component: {fileID: -5883756874707797265}
   m_Layer: 5
   m_Name: Inventory Slot
   m_TagString: Untagged
@@ -123,6 +124,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-5883756874707797265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779663548674668517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294a3d416f4d2044abe9cbb4a2367644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem: {fileID: 1779663548674668517}
+  coinsManager: {fileID: 0}
+  sellCost: 0
 --- !u!1 &1779663549868048677
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1342513835134899779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5883756874707797265}
+        m_TargetAssemblyTypeName: ItemAttributes, Assembly-CSharp
+        m_MethodName: SellItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6318292946720239629
 GameObject:
   m_ObjectHideFlags: 0
