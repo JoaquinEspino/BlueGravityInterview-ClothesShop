@@ -7,18 +7,22 @@ public class ShopDialogueManager : MonoBehaviour
     // Start is called before the first frame update
     public bool onTriggerTile;
 
-    public GameObject welcomeDialogue;
+    public GameObject welcomeDialogue, exitDialogue;
     public bool inDialogueEvent;
+    public bool inUIEvent;
+    public int noOfWelcomeDialogue = 1;
+    public int welcomeDialogueIndex = 0;
     void Start()
     {
         onTriggerTile = false;
         inDialogueEvent = false;
+        inUIEvent = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         WelcomeDialogue();
+        ThankYouDialogue();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,23 +38,39 @@ public class ShopDialogueManager : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             onTriggerTile = false;
+            welcomeDialogueIndex = 0;
         }
     }
 
 
     void WelcomeDialogue()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onTriggerTile)
+        if(Input.GetKeyDown(KeyCode.Space) && onTriggerTile )
         {
-            welcomeDialogue.SetActive(true);
-            inDialogueEvent = true;
+            if(welcomeDialogueIndex == 0)
+            {
+                welcomeDialogue.SetActive(true);
+                inDialogueEvent = true;
+            }
+            else if(welcomeDialogueIndex == 1)
+            {
+                welcomeDialogue.SetActive(false);
+                inUIEvent = true;
+            }
+            welcomeDialogueIndex++;
         }
+        
+    }
 
-        //temporary for testing
-        if(Input.GetKeyDown(KeyCode.Q) && onTriggerTile)
+    void ThankYouDialogue()
+    {
+        if(exitDialogue.activeSelf)
         {
-            welcomeDialogue.SetActive(false);
-            inDialogueEvent = false;
+            if(Input.GetKeyDown(KeyCode.Space) && onTriggerTile)
+            {
+                exitDialogue.SetActive(false);
+                inDialogueEvent = false;
+            }
         }
     }
 }
