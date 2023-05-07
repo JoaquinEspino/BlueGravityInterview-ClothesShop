@@ -25,11 +25,6 @@ public class ItemAttributes : MonoBehaviour
         shopInventory = GameObject.FindWithTag("ShopInventory").GetComponent<ShopInventory>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SellItem()
     {

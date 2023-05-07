@@ -15,11 +15,6 @@ public class ShopInventory : MonoBehaviour
         InitializeShopItems();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void InitializeShopItems()
     {

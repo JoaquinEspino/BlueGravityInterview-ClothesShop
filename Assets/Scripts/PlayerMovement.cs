@@ -14,13 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator.runtimeAnimatorController = Resources.Load("Animators/Player") as RuntimeAnimatorController;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //movement inputs

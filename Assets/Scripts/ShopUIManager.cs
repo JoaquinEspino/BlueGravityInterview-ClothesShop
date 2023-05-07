@@ -6,11 +6,7 @@ public class ShopUIManager : MonoBehaviour
 {
     public GameObject shopUI;
     public ShopDialogueManager shopDialogueManager;
-    void Start()
-    {
-        
-    }
-
+ 
     void Update()
     {
         EnterUIPanel();

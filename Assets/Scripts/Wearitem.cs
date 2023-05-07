@@ -5,19 +5,13 @@ using UnityEngine;
 
 public class Wearitem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // toggles the equip and unequip clothes
     bool buttonFlipper;
     public ClothesManager clothesManager;
     void Start()
     {
         buttonFlipper = false;
         clothesManager = GameObject.FindWithTag("ClothesManager").GetComponent<ClothesManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void WearItem()
@@ -30,7 +24,7 @@ public class Wearitem : MonoBehaviour
         }
         if(buttonFlipper)
         {
-            
+            clothesManager.RemoveClothing(gameObject.GetComponent<ItemAttributes>());
             gameObject.GetComponent<Image>().color = Color.white;
             
         }

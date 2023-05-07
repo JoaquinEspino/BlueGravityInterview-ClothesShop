@@ -16,17 +16,6 @@ public class InventoryManager : MonoBehaviour
         //LoadDefaultItems();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-    public void ItemBought()
-    {
-        
-    }
 
     void LoadDefaultItems()
     {

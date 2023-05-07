@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShopDialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public bool onTriggerTile;
 
     public GameObject welcomeDialogue, exitDialogue;
@@ -70,6 +69,7 @@ public class ShopDialogueManager : MonoBehaviour
             {
                 exitDialogue.SetActive(false);
                 inDialogueEvent = false;
+                welcomeDialogueIndex = 0;
             }
         }
     }

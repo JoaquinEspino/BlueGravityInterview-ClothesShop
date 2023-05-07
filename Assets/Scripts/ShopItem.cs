@@ -23,12 +23,6 @@ public class ShopItem : MonoBehaviour
         inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
     public void SetAttributes()
     {
         itemNameText.text = itemName;

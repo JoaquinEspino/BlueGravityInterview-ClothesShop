@@ -16,11 +16,6 @@ public class ClothesManager : MonoBehaviour
         sortedClothesWorn.Add(clothesWorn);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AddClothes(ItemAttributes item)
     {
@@ -38,6 +33,7 @@ public class ClothesManager : MonoBehaviour
             sortedClothesWorn[2] = item;
         }
 
+        //gets the required animator from the directory based on the clothes worn
         animatorPath = "Animators/Player" + sortedClothesWorn[0].itemTag + sortedClothesWorn[1].itemTag + sortedClothesWorn[2].itemTag;
         Debug.Log(animatorPath);
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
