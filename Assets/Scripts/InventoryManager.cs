@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     public Sprite defaultItemSprite;
     void Start()
     {
-        LoadDefaultItems();
+        //LoadDefaultItems();
     }
 
     // Update is called once per frame
@@ -43,13 +43,15 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void AddNewItem(int sellCost, Sprite chosenSprite, string itemTag)
+    public void AddNewItem(int sellCost, Sprite chosenSprite, string itemTag, string itemType, string itemName)
     {
         ItemAttributes tempItem = defaultItem;
         tempItem = Instantiate(defaultItem, panel);
         tempItem.sellCost = sellCost;
         tempItem.chosenSprite = chosenSprite;
         tempItem.itemTag = itemTag;
+        tempItem.itemType = itemType;
+        tempItem.itemName = itemName;
         tempItem.SetAttributes();
         Items.Add(tempItem);
 

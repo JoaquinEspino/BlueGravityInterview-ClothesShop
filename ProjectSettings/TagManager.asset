@@ -10,6 +10,8 @@ TagManager:
   - Shirts
   - Pants
   - Scarfs
+  - ClothesManager
+  - ShopInventory
   layers:
   - Default
   - TransparentFX
